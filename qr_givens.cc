@@ -32,13 +32,13 @@ void qr_givens(mat& R)
 
 	// Start the rotations
 	for (int r = 0, c = 0; c < S - 1; r++, c++) {
-		// Get first element in the row
-		double a1 = R(r, c);
-		double a1_abs = std::fabs(a1);
-		// Iterate over the remaining rows
+		// Iterate over the rows
 		for (int r2 = r + 1; r2 < m; r2++) {
 			// Get the elements
+			// Get first element in the row
+			double a1 = R(r, c);
 			double a2 = R(r2, c);
+			double a1_abs = std::fabs(a1);
 			double a2_abs = std::fabs(a2);
 
 			if (a2_abs <= TOL * a1_abs) {
